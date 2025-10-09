@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Storage - GreenBites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #2d5016; margin-bottom: 20px; }
+    button {
+      padding: 12px 24px;
+      background: #2d5016;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover { background: #4a7c2c; }
+    .success { color: #4caf50; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌱 GreenBites Storage Manager</h1>
+    <p>Click the button below to clear all saved data and start fresh.</p>
+    <button onclick="clearStorage()">Clear All Data</button>
+    <button onclick="goToApp()">Go to App</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function clearStorage() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById('message').innerHTML = 
+        '<p class="success">✅ All data cleared! You can now start fresh.</p>';
+    }
+
+    function goToApp() {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>
